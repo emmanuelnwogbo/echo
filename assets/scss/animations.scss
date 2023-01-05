@@ -15,45 +15,45 @@
     }
   }
 
-  @keyframes slide-item {
+  @keyframes spiralanima {
+    
+  }
+
+  @keyframes moveleft {
     0% {
-      left: 150%;
-      opacity: 1;
+      transform: translate3d(0,0,0);
     }
-    36% {
-      left: 50%;
-      opacity: 1;
-    }
-    72% {
-      left: -50%;
-      opacity: 1;
-    }
+
     100% {
-      left: -50%;
+      transform: translate3d(-100%, 0, 0);
     }
   }
 
-  @keyframes spiralanima {
+  @keyframes moveafter {
     0% {
-      transform: scale(0);
-      opacity: 0;
+      top:100%;
+      left:100%;
+    }
+    50% {
+      top:-100%;
+      left:-100%;
+    }
+    100% {
+      top:-100%;
+      left:-100%;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(.8);
     }
 
     50% {
-      opacity: 0.5;
-    }
-
-    70% {
       transform: scale(1);
-      opacity: 1;
-      
-    }
-
-    80% {
-      opacity: 0.5;
     }
 
     100% {
-      opacity: 0;
+      transform: scale(.8);
     }
   }

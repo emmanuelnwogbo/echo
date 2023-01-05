@@ -8,25 +8,11 @@
             <span>design</span>
         </h1>
 
-        <!--<figure class="jumbotron__spiral" id="jumbotrob_spiral1" :class="{
-          visible
-        }" v-for="item in toggllerArr">
-          <img src="@/assets/imgs/spiral.svg"/>
-        </figure>-->
+        <figure class="jumbotron__arrowdouble">
+          <img src="@/assets/imgs/arrowdouble.svg"/>
+        </figure>
 
         <div class="jumbotron__spiraltra">
-          <figure class="jumbotron__spiral">
-            <img src="@/assets/imgs/spiral.svg"/>
-          </figure>
-
-          <figure class="jumbotron__spiral">
-            <img src="@/assets/imgs/spiral.svg"/>
-         </figure>
-
-          <figure class="jumbotron__spiral">
-            <img src="@/assets/imgs/spiral.svg"/>
-          </figure>
-
           <figure class="jumbotron__spiral">
             <img src="@/assets/imgs/spiral.svg"/>
           </figure>
@@ -106,34 +92,32 @@
         z-index: 3;
     }
 
+    &__arrowdouble {
+      position: absolute;
+      top: #{scaleValue(30)};
+      left: #{scaleValue(780)};
+      height: #{scaleValue(450)};
+      width: #{scaleValue(450)};
+      border-radius: 100%;
+
+      transition: all .3s ease-in;
+
+      animation: pulse 1.1s infinite linear;
+
+      & img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
     &__spiral {
       position: fixed;
       top: #{scaleValue(150)};
       right: #{scaleValue(10)};
       height: #{scaleValue(1000)};
 
-      &:nth-child(2) {
-        animation: spiralanima 4s ease-in-out infinite;
-      }
-
-      &:nth-child(3) {
-        animation: spiralanima 5s ease-in-out infinite;
-      }
-
-      &:nth-child(4) {
-        animation: spiralanima 6s ease-in-out infinite;
-      }
-
-      &:nth-child(5) {
-        animation: spiralanima 7s ease-in-out infinite;
-      }
-    }
-
-    &__spiralcolored {
-      position: fixed;
-      top: #{scaleValue(200)};
-      right: #{scaleValue(100)};
-      height: #{scaleValue(1000)};
+      animation: spiralanima 1s infinite linear;
     }
 }
 </style>

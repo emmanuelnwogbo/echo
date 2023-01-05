@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="home">
-      <Header />
       <Jumbotron />
       <HowWeThink />
       <Brands />
