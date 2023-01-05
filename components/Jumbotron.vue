@@ -32,24 +32,6 @@
           </figure>
         </div>
 
-        <div class="jumbotron__spiralcolo">
-          <figure class="jumbotron__spiralcolored">
-            <img src="@/assets/imgs/coloredspiral.svg"/>
-          </figure>
-
-          <figure class="jumbotron__spiralcolored">
-            <img src="@/assets/imgs/coloredspiral.svg"/>
-         </figure>
-
-          <figure class="jumbotron__spiralcolored">
-            <img src="@/assets/imgs/coloredspiral.svg"/>
-          </figure>
-
-          <figure class="jumbotron__spiralcolored">
-            <img src="@/assets/imgs/coloredspiral.svg"/>
-          </figure>
-        </div>
-
       </div>
     </div>
   </template>
