@@ -102,6 +102,8 @@
         animation-duration: .8s;
         animation-name: moveInUp;
         display: none;
+        position: relative;
+        z-index: 3;
     }
 
     &__spiral {
