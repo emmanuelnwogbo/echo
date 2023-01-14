@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <div class="dropdown__content">
+            <div class="dropdown__content" ref="dropdowncontent">
                 <div class="dropdown__links">
                     <div class="dropdown__link" :class="{
                         current: true
@@ -60,89 +60,10 @@
 </template>
   
 <script>
-import gsap from "gsap";
+import dropdown from '@/mixins/dropdown.js';
 
 export default {
-    data() {
-        return {
-            dropdownOpen: false
-        }
-    },
-    methods: {
-        toggleDropdown() {
-            this.dropdownOpen ? this.dropdownOpen = false : this.dropdownOpen = true;
-
-            if(this.dropdownOpen) {
-                let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});
-
-                tl.to('.dropdown__content', {
-                    height: '650px',
-                    'padding': '25px 250px',
-                    'marginTop': '100px',
-                    duration: .1
-                });
-
-                tl.to('.dropdown__background', {
-                    height: '100%',
-                    duration: .8
-                });
-
-                tl.to('.dropdown__stroke', { 
-                    stagger: .1,
-                    height: '100%'
-                }, "-=2")
-
-                tl.to('.dropdown__links', {
-                    'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: .4
-                });
-
-                tl.to('.dropdown__contact', {
-                    stagger: .5,
-                    'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: .4
-                });
-            } else {
-                let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});
-
-                tl.to('.dropdown__contact', {
-                    'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', 
-                    opacity: 0, 
-                    y: 0, 
-                    duration: .1
-                });
-
-                tl.to('.dropdown__links', {
-                    'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', 
-                    opacity: 0, 
-                    y: 'translateY(100px)', 
-                    duration: .3
-                });
-
-                tl.to('.dropdown__content', {
-                    height: '0',
-                    'padding': '0',
-                    'marginTop': '0',
-                    duration: .1
-                });
-
-                tl.to('.dropdown__background', {
-                    height: '0',
-                    duration: .8
-                });
-
-                tl.to('.dropdown__stroke', { 
-                    stagger: .1,
-                    height: '0'
-                }, "-=2")
-            }
-        }
-    },
-    mounted() {},
+    mixins: [dropdown]
 }
 </script>
 
@@ -226,6 +147,11 @@ export default {
         margin: 0;
         padding: 0;
         height: 0;
+
+        @media only screen and (max-width: 414px) {
+            margin-top: #{scaleValue(50)};
+            flex-direction: column;
+        }
     }
 
     &__links {
@@ -235,6 +161,11 @@ export default {
         clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
         opacity: 0;
         transform: translateY(100px);
+
+        @media only screen and (max-width: 414px) {
+            font-size:  #{scaleValue(140)};
+            line-height:  #{scaleValue(260)};
+        }
     }
 
     &__link {
@@ -259,13 +190,27 @@ export default {
                 border-radius: 3rem;
 
                 transition: all 1s ease-in;
-                animation: growLinkLine 1s ease-in
+                animation: growLinkLine 1s ease-in;
+
+                @media only screen and (max-width: 414px) {
+                    top: #{scaleValue(210)};
+                    height: #{scaleValue(15)};
+                 }
             }
         }
     }
 
     &__contacts {
         font-size:  #{scaleValue(15)};
+
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        opacity: 0;
+        transform: translateY(100px);
+
+        @media only screen and (max-width: 414px) {
+            font-size:  #{scaleValue(60)};
+            transform: translateY(100px);
+        }
     }
 
     &__contact {
@@ -274,9 +219,7 @@ export default {
         margin-bottom: #{scaleValue(50)};
         cursor: pointer;
 
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-        opacity: 0;
-        transform: translateY(100px);
+        
 
         &--label {
             margin-bottom: #{scaleValue(5)};

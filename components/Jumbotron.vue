@@ -36,40 +36,10 @@
   </template>
   
   <script>
-  import gsap from "gsap";
+  import jumbotronMixin from '@/mixins/jumbotron.js';
 
   export default {
-    mounted() {
-        const x = window.matchMedia("(max-width: 414px)")
-
-        if (!x.matches) {
-            var tl = new TimelineMax({ onUpdate: updatePercentage });
-            let tl2 = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});
-
-            const controller = new ScrollMagic.Controller();
-
-            tl2.to('.jumbotron__copy--line', {
-                stagger: .3,
-                'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', 
-                opacity: 1,  
-                duration: 1
-            });
-
-            tl.from('.jumbotron__scolltext', 2, { x: 1000 });
-
-            const scene = new ScrollMagic.Scene({
-                triggerElement: ".jumbotron",
-                triggerHook: "onLeave", //onEnter, onCenter
-            duration: "150%"
-            })
-            .setTween(tl)
-            .addTo(controller);
-
-            function updatePercentage() {
-                tl.progress();
-            } 
-        } 
-    }
+    mixins: [jumbotronMixin]
   }
   </script>
 
@@ -82,6 +52,7 @@
     @media only screen and (max-width: 414px) {
         padding: #{scaleValue(25)} #{scaleValue(120)};
         padding-top: #{scaleValue(1000)};
+        overflow: hidden;
     }
 
     &__spiral {
@@ -131,15 +102,10 @@
             font-size: #{scaleValue(130)};
             line-height: #{scaleValue(210)};
         }
-
+        
         &--line {
             clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
             opacity: 0;
-
-            @media only screen and (max-width: 414px) {
-                opacity: 1;
-                clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)
-            }
         }
     }
 
@@ -149,14 +115,14 @@
         transform: translateX(#{scaleValue(-200)});
 
         @media only screen and (max-width: 414px) {
-            transform: translateX(#{scaleValue(0)});
+            transform: translateX(#{scaleValue(100)});
+            margin-top: #{scaleValue(270)};
         }
 
         & p {
             flex-shrink: 0;
             margin-left: #{scaleValue(30)};
         }
-
         & p.transparent {
             color: transparent;
             -webkit-text-stroke: #EF5776;
@@ -170,7 +136,8 @@
         font-weight: 600;
 
         @media only screen and (max-width: 414px) {
-            font-size: #{scaleValue(1000)};
+            font-size: #{scaleValue(260)};
+            font-weight: 400;
         }
     }
 
@@ -187,7 +154,6 @@
         &--header {
             font-size: #{scaleValue(45)};
             flex-shrink: 0;
-
             @media only screen and (max-width: 414px) {
                 font-size: #{scaleValue(120)};
             }
@@ -202,7 +168,6 @@
             padding-right: #{scaleValue(120)};
             flex-shrink: 0;
             line-height: #{scaleValue(40)};
-
             width: #{scaleValue(820)};
 
             @media only screen and (max-width: 414px) {
@@ -251,4 +216,3 @@
     }
   }
   </style>
-  
