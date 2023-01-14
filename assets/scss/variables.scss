@@ -11,9 +11,3 @@ $whitelogoarea: #D9D9D9;
         #{$value} * (clamp(350px, 100vw, 3840px) / var(--ideal-viewport-width))
     );
 }
-
-img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}

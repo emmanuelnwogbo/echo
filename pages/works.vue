@@ -1,11 +1,23 @@
 <template>
     <div>
-      <div class="work"></div>
+      <div class="work">
+        <Works />
+      </div>
     </div>
   </template>
   
   <script>
-  export default {}
+
+  export default {
+    data() {
+      return {}
+    },
+    head() {
+      return {
+        title: 'Echo works'
+      }
+    }
+  }
   </script>
   
   <style lang="scss" scoped>

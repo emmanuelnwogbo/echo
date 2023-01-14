@@ -33,9 +33,10 @@
 
 <style lang="scss" scoped>
 .brands {
-    background: $whitelogoarea;
+    background: $white2;
     position: relative;
     z-index: 2;
+    margin-top: #{scaleValue(100)};
 
     &__conveyor {
         display: flex;
@@ -43,13 +44,18 @@
         position: relative;
         min-height: #{scaleValue(400)};
         width: 100%;
-        background: $whitelogoarea;
+        background: $white2;
 
         animation: moveleft 30s linear infinite;
 
         & img {
             height: #{scaleValue(50)};
             margin-right: #{scaleValue(50)};
+
+            @media only screen and (max-width: 414px) {
+              height: #{scaleValue(120)};
+              margin-right: #{scaleValue(70)};
+            }
 
             &:last-child {
                 margin-right: 0;

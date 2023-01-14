@@ -13,6 +13,20 @@ export default {
     ],
     link: [
       //{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js",
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js",
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js",
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js",
+      }
     ]
   },
 
@@ -22,8 +36,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

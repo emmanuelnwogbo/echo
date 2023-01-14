@@ -1,9 +1,10 @@
 <template>
   <div>
     <div class="home">
-      <Jumbotron />
-      <HowWeThink />
-      <Brands />
+      <div class="home__body">
+        <Jumbotron />
+        <Brands />
+      </div>
       <Footer />
     </div>
   </div>
@@ -12,12 +13,29 @@
 <script>
 export default {
   mounted() {
-    document.getElementById('jumbotron_copy').style.display = `flex`;
+    const home = document.querySelector('.home__body');
+    const x = window.matchMedia("(max-width: 414px)")
+
+    if (x.matches) {
+      home.style.display = `none`;
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .home {
+  position: relative;
+  
+  &__body {
+    position: relative;
+    z-index: 2;
+    margin-bottom: #{scaleValue(800)};
+    background: $white;
+
+    @media only screen and (max-width: 414px) {
+      margin-bottom: 0;
+    }
+  }
 }
 </style>
