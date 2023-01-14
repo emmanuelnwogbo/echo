@@ -12,14 +12,7 @@
 
 <script>
 export default {
-  mounted() {
-    const home = document.querySelector('.home__body');
-    const x = window.matchMedia("(max-width: 414px)")
-
-    if (x.matches) {
-      home.style.display = `none`;
-    }
-  }
+  mounted() {}
 }
 </script>
 
@@ -34,7 +27,7 @@ export default {
     background: $white;
 
     @media only screen and (max-width: 414px) {
-      margin-bottom: 0;
+      display: none;
     }
   }
 }
