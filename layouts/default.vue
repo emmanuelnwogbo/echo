@@ -1,6 +1,6 @@
 <template>
     <div>
-      <DropDown />
+      <!--<DropDown />-->
       <Nuxt />
     </div>
   </template>

@@ -20,6 +20,8 @@
 body {
     overflow-x: hidden;
     background:#fff;
+
+    min-height: #{scaleValue(700)};
 }
 
 html {

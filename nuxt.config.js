@@ -26,6 +26,15 @@ export default {
       },
       {
         src: "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js",
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.6/gsap.min.js",
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.148.0/three.min.js",
+      },
+      {
+        src: "/hover-effect-umd.js",
       }
     ]
   },

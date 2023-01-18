@@ -36,7 +36,6 @@
     background: $white2;
     position: relative;
     z-index: 2;
-    margin-top: #{scaleValue(100)};
 
     @media only screen and (max-width: 414px) {
          overflow-y: hidden;
@@ -46,7 +45,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        min-height: #{scaleValue(400)};
+        min-height: #{scaleValue(200)};
         width: 100%;
         background: $white2;
 
