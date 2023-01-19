@@ -1,7 +1,8 @@
+import gsap from 'gsap';
+
 export default {
     mounted() {
         //const x = window.matchMedia("(max-width: 414px)")
-        console.log('check gsap', gsap);
 
         const tl = new TimelineMax({ onUpdate: updatePercentage });
         const tl2 = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});

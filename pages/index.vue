@@ -1,21 +1,22 @@
 <template>
     <div class="jumbotron">
-        <div class="jumbotron__background">
+        <div class="jumbotron__desktop">
+            <div class="jumbotron__background">
 
-        </div>
-        <div class="jumbotron__content">
-            <div class="jumbotron__copy">
-                <span class="jumbotron__copy--line">The young and vibrant creative</span>
-                <span class="jumbotron__copy--line">collective, adopting</span>
-                <span class="jumbotron__copy--line">a culture forward</span>
-                <span class="jumbotron__copy--line">approach to brand building</span>
             </div>
-        </div>
+            <div class="jumbotron__content">
+                <div class="jumbotron__copy">
+                    <span class="jumbotron__copy--line">The young and vibrant creative</span>
+                    <span class="jumbotron__copy--line">collective, adopting</span>
+                    <span class="jumbotron__copy--line">a culture forward</span>
+                    <span class="jumbotron__copy--line">approach to brand building</span>
+                </div>
+            </div>
 
-        <div class="jumbotron__scolltext--area">
-            <div class="jumbotron__scolltext">
-                <p class="jumbotron__weareecho black">echo africa</p>
-                <p class="jumbotron__weareecho transparent">We are Echo</p>
+            <div class="jumbotron__scolltext--area">
+                <div class="jumbotron__scolltext">
+                    <p class="jumbotron__weareecho black">echo africa</p>
+                    <p class="jumbotron__weareecho transparent">We are Echo</p>
             </div>
 
             <div class="jumbotron__howwethink">
@@ -26,15 +27,22 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
                     <!--<div class="jumbotron__btn">
-                        <NuxtLink to="/howwethink">View details</NuxtLink>
-                    </div>-->
+                            <NuxtLink to="/howwethink">View details</NuxtLink>
+                        </div>-->
+                 </div>
                 </div>
             </div>
         </div>
 
-        <Competencies />
-        <WhoWeAre />
-        <Brands />
+
+        <div class="jumbotron__desktop">
+            <Competencies />
+            <WhoWeAre />
+            <Brands />
+            <EchoFooter />
+        </div>
+
+        <Mobile />
     </div>
 </template>
 
@@ -68,7 +76,7 @@ export default {
                 const anim1 = 0.25 * Math.sin(x + time * 0.7);
                 const anim2 = 0.35 * Math.sin((x * 1) + time * 0.7);
                 const anim3 = 0.1 * Math.sin((y * 15) + time * 0.7);
-                geometry.attributes.position.setZ(i, anim1 + anim2);
+                geometry.attributes.position.setZ(i, anim1 + anim2 + anim3);
                 geometry.computeVertexNormals();
                 geometry.attributes.position.needsUpdate = true;
             }
@@ -76,7 +84,7 @@ export default {
             renderer.render(scene, camera);
         }
         animate();
-    },
+    }
 }
 </script>
 
@@ -88,6 +96,13 @@ export default {
         height: #{scaleValue(1000)};
     }
 
+    &__desktop {
+        @media only screen and (max-width: 414px) {
+            display: none;
+            background: red;
+        }
+    }
+
     &__content {
         position: fixed;
         height: #{scaleValue(1000)};
@@ -95,7 +110,7 @@ export default {
         top: 0;
         left: 0;
         padding: #{scaleValue(160)};
-        padding-top: #{scaleValue(360)};
+        padding-top: #{scaleValue(380)};
         z-index: 1;
     }
 

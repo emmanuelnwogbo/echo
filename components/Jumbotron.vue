@@ -46,7 +46,7 @@
   <style lang="scss" scoped>
   .jumbotron {
     padding: #{scaleValue(25)} #{scaleValue(200)};
-    padding-top: #{scaleValue(410)};
+    padding-top: #{scaleValue(550)};
     position: relative;
 
     @media only screen and (max-width: 414px) {

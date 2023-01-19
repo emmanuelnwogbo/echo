@@ -39,7 +39,7 @@
 
     @media only screen and (max-width: 414px) {
          overflow-y: hidden;
-     }
+    }
 
     &__conveyor {
         display: flex;
