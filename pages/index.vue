@@ -16,15 +16,15 @@
             <div class="jumbotron__scolltext--area">
                 <div class="jumbotron__scolltext">
                     <p class="jumbotron__weareecho black">echo africa</p>
-                    <p class="jumbotron__weareecho transparent">We are Echo</p>
-            </div>
+                    <p class="jumbotron__weareecho transparent">echo africa</p>
+                </div>
 
             <div class="jumbotron__howwethink">
                 <div class="jumbotron__howwethink--header">
                     How we think
                 </div>
                 <div class="jumbotron__howwethink--copy">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p><span>As bold challengers,</span> we believe our thinking needs to be transformed to create things people actually want and welcome. We believe that people are the core of any business, therefore understanding people, their barriers, aspirations and problems is the first step to innovative solutioning.</p>
 
                     <!--<div class="jumbotron__btn">
                             <NuxtLink to="/howwethink">View details</NuxtLink>
@@ -210,6 +210,10 @@ export default {
             flex-shrink: 0;
             line-height: #{scaleValue(40)};
             width: #{scaleValue(820)};
+
+            & span {
+                font-weight: 500;
+            }
 
             @media only screen and (max-width: 414px) {
                 padding-left: 0;

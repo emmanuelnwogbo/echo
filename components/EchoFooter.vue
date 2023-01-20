@@ -35,15 +35,21 @@
                     </div>
 
                     <div class="footer__socialitems">
-                        <!--<figure class="footer__socialitems--svg">
-                            <img src="@/assets/svgs/icon-linkedin1.svg"/>
+                        <figure class="footer__socialitems--svg">
+                            <svg class="linkedin">
+                                <use xlink:href="@/assets/imgs/sprite.svg#icon-linkedin"/>
+                            </svg>
                         </figure>
                         <figure class="footer__socialitems--svg">
-                            <img src="@/assets/svgs/icon-instagram.svg"/>
+                            <svg class="instagram">
+                                <use xlink:href="@/assets/imgs/sprite.svg#icon-instagram"/>
+                            </svg>
                         </figure>
                         <figure class="footer__socialitems--svg">
-                            <img src="@/assets/svgs/icon-facebook1.svg"/>
-                        </figure>-->
+                            <svg class="facebook">
+                                <use xlink:href="@/assets/imgs/sprite.svg#icon-facebook"/>
+                            </svg>
+                        </figure>
                     </div>
                 </div>
 
@@ -99,6 +105,11 @@
 
     z-index: 2;
 
+    @media only screen and (max-width: 414px) {
+        flex-direction: column;
+        padding: #{scaleValue(100)} #{scaleValue(100)};
+    }
+
     &__left {
         display: flex;
         flex-direction: column;
@@ -111,28 +122,53 @@
         justify-content: flex-start;
         margin-bottom: #{scaleValue(10)};
 
+        @media only screen and (max-width: 414px) {
+            height: #{scaleValue(150)};
+            margin-bottom: #{scaleValue(50)};
+        }
+
         & img {
             object-fit: contain;
             height: 100%;
             width: 100%;
             transform: translateX(#{scaleValue(-102)});
+
+            @media only screen and (max-width: 414px) {
+                transform: translateX(#{scaleValue(-552)});
+            }
         }
     }
 
     &__feelfree {
         opacity: .6;
         margin-bottom: #{scaleValue(7)};
+
+        @media only screen and (max-width: 414px) {
+            font-size: #{scaleValue(70)};
+            line-height: #{scaleValue(100)};
+        }
     }
 
     &__email {
         text-decoration: underline;
         font-size: #{scaleValue(14)};
         margin-top: #{scaleValue(17)};
+
+        @media only screen and (max-width: 414px) {
+            font-size: #{scaleValue(60)};
+            margin-top: #{scaleValue(60)};
+            margin-bottom: #{scaleValue(60)};
+        }
     }
 
     &__bbe {
         font-size: #{scaleValue(17)};
         margin-top: #{scaleValue(20)};
+
+        @media only screen and (max-width: 414px) {
+            font-size: #{scaleValue(60)};
+            margin-bottom: #{scaleValue(60)};
+        }
     }
 
     &__h2 {
@@ -142,6 +178,11 @@
         font-size: #{scaleValue(35)};
         line-height: #{scaleValue(47)};
         margin-bottom: #{scaleValue(15)};
+
+        @media only screen and (max-width: 414px) {
+            font-size: #{scaleValue(100)};
+            line-height: #{scaleValue(140)};
+        }
     }
 
     &__right {
@@ -157,6 +198,11 @@
         &--header {
             font-size: #{scaleValue(14)};
             margin-bottom: #{scaleValue(16)};
+
+            @media only screen and (max-width: 414px) {
+                font-size: #{scaleValue(80)};
+                margin-bottom: #{scaleValue(90)};
+            }
         }
     }
 
@@ -172,15 +218,35 @@
             align-items: center;
             background: $white2;
             border-radius: 100%;
-
             cursor: pointer;
-
             margin-right: #{scaleValue(40)};
 
-            & img {
-                object-fit: cover;
-                height: 60%;
-                width: 60%;
+            @media only screen and (max-width: 414px) {
+                width: #{scaleValue(140)};
+                height: #{scaleValue(140)};
+                margin-right: #{scaleValue(100)};
+            }
+
+            & svg {
+                width: #{scaleValue(20)};
+                height: #{scaleValue(20)};
+
+                @media only screen and (max-width: 414px) {
+                    width: #{scaleValue(80)};
+                    height: #{scaleValue(80)};
+                }
+
+                &.linkedin {
+                    
+                }
+
+                &.instagram {
+
+                }
+
+                &.facebook {
+
+                }
             }
         }
     }
@@ -190,6 +256,11 @@
         flex-direction: column; 
         line-height: #{scaleValue(25)};
         font-size: #{scaleValue(14)};
+
+        @media only screen and (max-width: 414px) {
+            font-size: #{scaleValue(60)};
+            line-height: #{scaleValue(120)};
+        }
     }
 
     &__small {

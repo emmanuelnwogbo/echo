@@ -1,15 +1,19 @@
 <template>
     <div>
         <div class="mobile">
-            hello mobile
+            <JumbotronMobile />
+            <SolutionsMobile />
+            <CompetenciesMobile />
+            <WhoWeAreMobile />
+            <Brands />
+            <EchoFooter />
         </div>
     </div>
 </template>
 
 <script>
-export default {
 
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
