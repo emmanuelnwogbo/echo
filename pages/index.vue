@@ -1,5 +1,12 @@
 <template>
     <div class="jumbotron">
+        <div class="jumbotron__loading" id="page-loading">
+            <figure>
+                <img src="@/assets/imgs/logo.svg"/>
+            </figure>
+
+            <p id="page-loading-counter"></p>
+        </div>
         <div class="jumbotron__desktop">
             <div class="jumbotron__background">
 
@@ -14,7 +21,7 @@
             </div>
 
             <div class="jumbotron__scolltext--area">
-                <div class="jumbotron__scolltext">
+                <div class="jumbotron__scolltext" id="jumbotron__scolltext">
                     <p class="jumbotron__weareecho black">echo africa</p>
                     <p class="jumbotron__weareecho transparent">echo africa</p>
                 </div>
@@ -76,7 +83,7 @@ export default {
                 const anim1 = 0.25 * Math.sin(x + time * 0.7);
                 const anim2 = 0.35 * Math.sin((x * 1) + time * 0.7);
                 const anim3 = 0.1 * Math.sin((y * 15) + time * 0.7);
-                geometry.attributes.position.setZ(i, anim1 + anim2 + anim3);
+                geometry.attributes.position.setZ(i, anim1 + anim2);
                 geometry.computeVertexNormals();
                 geometry.attributes.position.needsUpdate = true;
             }
@@ -90,6 +97,36 @@ export default {
 
 <style lang="scss" scoped>
 .jumbotron {
+
+    &__loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 #{scaleValue(300)};
+        font-size: #{scaleValue(55)};
+        align-items: center;
+
+        transition: all 1s ease;
+
+        & figure {
+
+            & img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        & p {
+            color: #F16961;
+        }
+    }
     
     &__background {
         //position: fixed;
@@ -97,6 +134,7 @@ export default {
     }
 
     &__desktop {
+
         @media only screen and (max-width: 414px) {
             display: none;
             background: red;
@@ -152,7 +190,9 @@ export default {
     &__scolltext {
         padding: #{scaleValue(100)} 0;
         display: flex;
-        transform: translateX(#{scaleValue(-200)});
+        //transform: translateX(#{scaleValue(200)});
+        transition: all .3s ease;
+        margin-left: #{scaleValue(500)};
 
         &--area {
             position: relative;

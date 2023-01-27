@@ -16,6 +16,9 @@ export default {
     ],
     script: [
       {
+        src: "/main.js",
+      },
+      {
         src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js",
       },
       {
@@ -28,13 +31,19 @@ export default {
         src: "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js",
       },
       {
-        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.6/gsap.min.js",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js",
       },
       {
         src: "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.148.0/three.min.js",
       },
       {
         src: "/hover-effect-umd.js",
+      },
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'
+      },
+      {
+        sec: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'
       }
     ]
   },

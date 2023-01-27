@@ -2,24 +2,30 @@
     <div>
       <div class="brands">
         <div class="brands__conveyor">
-            <img src="@/assets/imgs/farmfortelogo.svg"/>
-            <img src="@/assets/imgs/oraimologo.svg"/>
-            <img src="@/assets/imgs/heinekenlogo.svg"/>
-            <img src="@/assets/imgs/farmfortelogo.svg"/>
-            <img src="@/assets/imgs/oraimologo.svg"/>
-            <img src="@/assets/imgs/heinekenlogo.svg"/>
-            <img src="@/assets/imgs/farmfortelogo.svg"/>
-            <img src="@/assets/imgs/oraimologo.svg"/>
-            <img src="@/assets/imgs/heinekenlogo.svg"/>
-            <img src="@/assets/imgs/farmfortelogo.svg"/>
-            <img src="@/assets/imgs/oraimologo.svg"/>
-            <img src="@/assets/imgs/heinekenlogo.svg"/>
-            <img src="@/assets/imgs/farmfortelogo.svg"/>
-            <img src="@/assets/imgs/oraimologo.svg"/>
-            <img src="@/assets/imgs/heinekenlogo.svg"/>
-            <img src="@/assets/imgs/farmfortelogo.svg"/>
-            <img src="@/assets/imgs/oraimologo.svg"/>
-            <img src="@/assets/imgs/heinekenlogo.svg"/>
+            <img src="@/assets/imgs/fanthingy.jpeg"/>
+            <img src="@/assets/imgs/oraimo-logo.png"/>
+            <img src="@/assets/imgs/kantar.jpeg"/>
+            <img src="@/assets/imgs/pigeon.jpeg"/>
+            <img src="@/assets/imgs/pillow.jpeg"/>
+            <img src="@/assets/imgs/trendwatching.png"/>
+            <img src="@/assets/imgs/fanthingy.jpeg"/>
+            <img src="@/assets/imgs/oraimo-logo.png"/>
+            <img src="@/assets/imgs/kantar.jpeg"/>
+            <img src="@/assets/imgs/pigeon.jpeg"/>
+            <img src="@/assets/imgs/pillow.jpeg"/>
+            <img src="@/assets/imgs/trendwatching.png"/>
+            <img src="@/assets/imgs/fanthingy.jpeg"/>
+            <img src="@/assets/imgs/oraimo-logo.png"/>
+            <img src="@/assets/imgs/kantar.jpeg"/>
+            <img src="@/assets/imgs/pigeon.jpeg"/>
+            <img src="@/assets/imgs/pillow.jpeg"/>
+            <img src="@/assets/imgs/trendwatching.png"/>
+            <img src="@/assets/imgs/fanthingy.jpeg"/>
+            <img src="@/assets/imgs/oraimo-logo.png"/>
+            <img src="@/assets/imgs/kantar.jpeg"/>
+            <img src="@/assets/imgs/pigeon.jpeg"/>
+            <img src="@/assets/imgs/pillow.jpeg"/>
+            <img src="@/assets/imgs/trendwatching.png"/>
         </div>
       </div>
     </div>
@@ -39,6 +45,7 @@
 
     @media only screen and (max-width: 414px) {
          overflow-y: hidden;
+         padding-bottom: #{scaleValue(80)};
     }
 
     &__conveyor {
@@ -47,16 +54,15 @@
         position: relative;
         min-height: #{scaleValue(200)};
         width: 100%;
-        background: $white2;
 
         animation: moveleft 30s linear infinite;
 
         & img {
-            height: #{scaleValue(50)};
-            margin-right: #{scaleValue(50)};
+            height: #{scaleValue(100)};
+            margin-right: #{scaleValue(80)};
 
             @media only screen and (max-width: 414px) {
-              height: #{scaleValue(120)};
+              height: #{scaleValue(300)};
               margin-right: #{scaleValue(70)};
             }
 
