@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 1
   });
 
-  gsap.registerPlugin(ScrollTrigger);
+  //gsap.registerPlugin(ScrollTrigger);
 
   gsap.utils.toArray('.jumbotron__scolltext--area').forEach((el, index) => { 
     let tl = gsap.timeline({
