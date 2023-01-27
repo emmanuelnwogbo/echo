@@ -77,7 +77,7 @@
             left: 0;
             animation: pulse .3s ease-in;
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 height: #{scaleValue(1600)};
                 width: #{scaleValue(1600)};
             }

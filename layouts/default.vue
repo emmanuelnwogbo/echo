@@ -25,7 +25,7 @@
     &__desktop {
       display: block;
 
-      @media only screen and (max-width: 414px) {
+      @media only screen and (max-width: 428px) {
         display: none;
       }
     }
@@ -33,7 +33,7 @@
     &__mobile {
       display: none;
 
-      @media only screen and (max-width: 414px) {
+      @media only screen and (max-width: 428px) {
         display: block;
         z-index: 4;
         position: fixed;

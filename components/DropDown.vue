@@ -97,7 +97,7 @@ export default {
             width: auto
         }
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             height: #{scaleValue(230)};
             transform: translateX(#{scaleValue(-100)});
 
@@ -116,7 +116,7 @@ export default {
         padding: #{scaleValue(23)} 0;
         cursor: pointer;
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             height: #{scaleValue(100)};
         }
 
@@ -127,7 +127,7 @@ export default {
             background: $white2;
             border-radius: 3rem;
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 height: #{scaleValue(10)};
                 width: #{scaleValue(140)};
             }
@@ -148,7 +148,7 @@ export default {
         padding: 0;
         height: 0;
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             margin-top: #{scaleValue(50)};
             flex-direction: column;
         }
@@ -162,7 +162,7 @@ export default {
         opacity: 0;
         transform: translateY(100px);
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size:  #{scaleValue(140)};
             line-height:  #{scaleValue(260)};
         }
@@ -192,7 +192,7 @@ export default {
                 transition: all 1s ease-in;
                 animation: growLinkLine 1s ease-in;
 
-                @media only screen and (max-width: 414px) {
+                @media only screen and (max-width: 428px) {
                     top: #{scaleValue(210)};
                     height: #{scaleValue(15)};
                  }
@@ -207,7 +207,7 @@ export default {
         opacity: 0;
         transform: translateY(100px);
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size:  #{scaleValue(60)};
             transform: translateY(100px);
         }

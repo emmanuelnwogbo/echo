@@ -43,7 +43,7 @@
     position: relative;
     z-index: 2;
 
-    @media only screen and (max-width: 414px) {
+    @media only screen and (max-width: 428px) {
          overflow-y: hidden;
          padding-bottom: #{scaleValue(80)};
     }
@@ -61,7 +61,7 @@
             height: #{scaleValue(100)};
             margin-right: #{scaleValue(80)};
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
               height: #{scaleValue(300)};
               margin-right: #{scaleValue(70)};
             }

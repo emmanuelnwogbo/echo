@@ -105,7 +105,7 @@
 
     z-index: 2;
 
-    @media only screen and (max-width: 414px) {
+    @media only screen and (max-width: 428px) {
         flex-direction: column;
         padding: #{scaleValue(100)} #{scaleValue(100)};
     }
@@ -122,7 +122,7 @@
         justify-content: flex-start;
         margin-bottom: #{scaleValue(10)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             height: #{scaleValue(150)};
             margin-bottom: #{scaleValue(50)};
         }
@@ -133,7 +133,7 @@
             width: 100%;
             transform: translateX(#{scaleValue(-102)});
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 transform: translateX(#{scaleValue(-552)});
             }
         }
@@ -143,7 +143,7 @@
         opacity: .6;
         margin-bottom: #{scaleValue(7)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(70)};
             line-height: #{scaleValue(100)};
         }
@@ -154,7 +154,7 @@
         font-size: #{scaleValue(14)};
         margin-top: #{scaleValue(17)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(60)};
             margin-top: #{scaleValue(60)};
             margin-bottom: #{scaleValue(60)};
@@ -165,7 +165,7 @@
         font-size: #{scaleValue(17)};
         margin-top: #{scaleValue(20)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(60)};
             margin-bottom: #{scaleValue(60)};
         }
@@ -179,7 +179,7 @@
         line-height: #{scaleValue(47)};
         margin-bottom: #{scaleValue(15)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(100)};
             line-height: #{scaleValue(140)};
         }
@@ -199,7 +199,7 @@
             font-size: #{scaleValue(14)};
             margin-bottom: #{scaleValue(16)};
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 font-size: #{scaleValue(80)};
                 margin-bottom: #{scaleValue(90)};
             }
@@ -221,7 +221,7 @@
             cursor: pointer;
             margin-right: #{scaleValue(40)};
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 width: #{scaleValue(140)};
                 height: #{scaleValue(140)};
                 margin-right: #{scaleValue(100)};
@@ -231,7 +231,7 @@
                 width: #{scaleValue(20)};
                 height: #{scaleValue(20)};
 
-                @media only screen and (max-width: 414px) {
+                @media only screen and (max-width: 428px) {
                     width: #{scaleValue(80)};
                     height: #{scaleValue(80)};
                 }
@@ -257,7 +257,7 @@
         line-height: #{scaleValue(25)};
         font-size: #{scaleValue(14)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(60)};
             line-height: #{scaleValue(120)};
         }

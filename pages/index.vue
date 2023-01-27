@@ -135,7 +135,7 @@ export default {
 
     &__desktop {
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             display: none;
             background: red;
         }
@@ -180,7 +180,7 @@ export default {
             left: 0;
             animation: pulse .3s ease-in;
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 height: #{scaleValue(1600)};
                 width: #{scaleValue(1600)};
             }
@@ -216,7 +216,7 @@ export default {
         font-size: #{scaleValue(190)};
         font-weight: 600;
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(260)};
             font-weight: 400;
         }
@@ -227,7 +227,7 @@ export default {
         padding-left: #{scaleValue(190)};
         margin-top: #{scaleValue(120)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             flex-direction: column;
             padding-left: 0;
         }
@@ -235,7 +235,7 @@ export default {
         &--header {
             font-size: #{scaleValue(45)};
             flex-shrink: 0;
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 font-size: #{scaleValue(120)};
             }
         }
@@ -255,7 +255,7 @@ export default {
                 font-weight: 500;
             }
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 padding-left: 0;
                 margin-top: #{scaleValue(130)};
                 font-size: #{scaleValue(90)};
@@ -270,7 +270,7 @@ export default {
         background: none;
         margin-top: #{scaleValue(50)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             margin-top: #{scaleValue(140)};
         }
 
@@ -285,7 +285,7 @@ export default {
             height: #{scaleValue(2)};
             border-radius: 3rem;
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 width:  #{scaleValue(100)};
                 height: #{scaleValue(10)};
                 top: #{scaleValue(57)};

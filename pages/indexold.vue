@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    const x = window.matchMedia("(max-width: 414px)");
+    const x = window.matchMedia("(max-width: 428px)");
 
     if (!x.matches) {
       this.mobile = false;

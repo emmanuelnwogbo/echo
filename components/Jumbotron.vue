@@ -49,7 +49,7 @@
     padding-top: #{scaleValue(550)};
     position: relative;
 
-    @media only screen and (max-width: 414px) {
+    @media only screen and (max-width: 428px) {
         padding: #{scaleValue(25)} #{scaleValue(120)};
         padding-top: #{scaleValue(1000)};
         overflow: hidden;
@@ -64,7 +64,7 @@
         height: #{scaleValue(800)};
         width: #{scaleValue(800)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             height: #{scaleValue(1600)};
             width: #{scaleValue(1600)};
             top: #{scaleValue(600)};
@@ -80,7 +80,7 @@
             left: 0;
             animation: pulse .3s ease-in;
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 height: #{scaleValue(1600)};
                 width: #{scaleValue(1600)};
             }
@@ -98,7 +98,7 @@
         position: relative;
         padding-bottom: #{scaleValue(100)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(130)};
             line-height: #{scaleValue(210)};
         }
@@ -114,7 +114,7 @@
         display: flex;
         transform: translateX(#{scaleValue(-200)});
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             transform: translateX(#{scaleValue(100)});
             margin-top: #{scaleValue(270)};
         }
@@ -135,7 +135,7 @@
         font-size: #{scaleValue(190)};
         font-weight: 600;
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(260)};
             font-weight: 400;
         }
@@ -146,7 +146,7 @@
         padding-left: #{scaleValue(190)};
         margin-top: #{scaleValue(120)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             flex-direction: column;
             padding-left: 0;
         }
@@ -154,7 +154,7 @@
         &--header {
             font-size: #{scaleValue(45)};
             flex-shrink: 0;
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 font-size: #{scaleValue(120)};
             }
         }
@@ -170,7 +170,7 @@
             line-height: #{scaleValue(40)};
             width: #{scaleValue(820)};
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 padding-left: 0;
                 margin-top: #{scaleValue(130)};
                 font-size: #{scaleValue(90)};
@@ -185,7 +185,7 @@
         background: none;
         margin-top: #{scaleValue(50)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             margin-top: #{scaleValue(140)};
         }
 
@@ -200,7 +200,7 @@
             height: #{scaleValue(2)};
             border-radius: 3rem;
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 width:  #{scaleValue(100)};
                 height: #{scaleValue(10)};
                 top: #{scaleValue(57)};

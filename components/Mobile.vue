@@ -21,7 +21,7 @@ export default {}
     padding-top: #{scaleValue(380)};
     display: none;
 
-    @media only screen and (max-width: 414px) {
+    @media only screen and (max-width: 428px) {
         display: block;
     }
 }

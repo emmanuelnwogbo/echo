@@ -8,7 +8,7 @@ export default {
     },
     computed: {
         mobileScreen: function() {
-            const x = window.matchMedia("(max-width: 414px)");
+            const x = window.matchMedia("(max-width: 428px)");
             return x.matches;
         }
     },

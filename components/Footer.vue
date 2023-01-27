@@ -27,7 +27,7 @@
 
   export default {
     mounted() {
-        const x = window.matchMedia("(max-width: 414px)")
+        const x = window.matchMedia("(max-width: 428px)")
 
         if (!x.matches) {
             var tl = new TimelineMax({ onUpdate: updatePercentage });
@@ -80,7 +80,7 @@
     z-index: 0;
     overflow: hidden;
 
-    @media only screen and (max-width: 414px) {
+    @media only screen and (max-width: 428px) {
         position: relative;
         height: #{scaleValue(2800)};
     }
@@ -94,7 +94,7 @@
         height: 100%;
         z-index: 1;
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             display: none;
         }
     }
@@ -109,7 +109,7 @@
         height: 100%;
         z-index: 2;
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             width: #{scaleValue(100)};
         }
     }
@@ -136,7 +136,7 @@
         letter-spacing: #{scaleValue(0.16)};
         margin-bottom: #{scaleValue(50)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(200)};
             line-height: #{scaleValue(250)};
             margin-bottom: #{scaleValue(170)};
@@ -150,7 +150,7 @@
         font-size: #{scaleValue(32)};
         margin-bottom: #{scaleValue(50)};
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(140)};
             line-height: #{scaleValue(200)};
             margin-bottom: #{scaleValue(100)};
@@ -162,7 +162,7 @@
         font-size: #{scaleValue(40)};
         position: relative;
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: 428px) {
             font-size: #{scaleValue(110)};
             line-height: #{scaleValue(200)};
         }
@@ -177,7 +177,7 @@
             bottom: #{scaleValue(-2)};
             border-radius: 3rem;
 
-            @media only screen and (max-width: 414px) {
+            @media only screen and (max-width: 428px) {
                 width: #{scaleValue(300)};
                 height: #{scaleValue(12)};
                 bottom: #{scaleValue(-32)};
