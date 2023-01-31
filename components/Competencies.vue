@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="competencies">
+        <div class="competencies" id="competencies">
             <div class="competencies__top">
                 <HoverCompImg />
                 <div class="competencies__right">

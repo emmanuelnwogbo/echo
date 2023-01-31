@@ -26,7 +26,7 @@
                     <p class="jumbotron__weareecho transparent">echo africa</p>
                 </div>
 
-            <div class="jumbotron__howwethink">
+            <div class="jumbotron__howwethink" id="howwethink">
                 <div class="jumbotron__howwethink--header">
                     How we think
                 </div>

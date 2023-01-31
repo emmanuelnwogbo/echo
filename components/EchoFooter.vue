@@ -1,6 +1,6 @@
 <template>
     <div>
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="footer__left">
                 <figure class="footer__logo">
                     <img src="@/assets/imgs/logo.svg"/>
@@ -19,15 +19,15 @@
                 </p>
 
                 <span class="footer__email">
-                    info@culturefoundryco.com
+                    info@echoafrica.co
                 </span>
 
-                <span class="footer__bbe">
+                <!--<span class="footer__bbe">
                     A B-BBEE Level 2 contributor
-                </span>
+                </span>-->
             </div>
 
-            <div class="footer__right">
+            <div class="footer__right" id="footer__right">
 
                 <div class="footer__rightarea">
                     <div class="footer__rightarea--header">
@@ -35,17 +35,17 @@
                     </div>
 
                     <div class="footer__socialitems">
-                        <figure class="footer__socialitems--svg">
+                        <figure class="footer__socialitems--svg" @click="open_link('https://ng.linkedin.com/showcase/billboards-by-echo-africa')">
                             <svg class="linkedin">
                                 <use xlink:href="@/assets/imgs/sprite.svg#icon-linkedin"/>
                             </svg>
                         </figure>
-                        <figure class="footer__socialitems--svg">
+                        <figure class="footer__socialitems--svg" @click="open_link('https://instagram.com/echoafrica.co?igshid=Zjc2ZTc4Nzk=')">
                             <svg class="instagram">
                                 <use xlink:href="@/assets/imgs/sprite.svg#icon-instagram"/>
                             </svg>
                         </figure>
-                        <figure class="footer__socialitems--svg">
+                        <figure class="footer__socialitems--svg" @click="open_link('')">
                             <svg class="facebook">
                                 <use xlink:href="@/assets/imgs/sprite.svg#icon-facebook"/>
                             </svg>
@@ -59,14 +59,11 @@
                     </div>
 
                     <div class="footer__addresses">
-                        <span class="footer__small">The Culture Foundry Co</span>
+                        <!--<span class="footer__small">The Culture Foundry Co</span>
                         <span class="footer__small">C/0 Workshop17</span>
-                        <span class="footer__small">146 Campground Rd</span>
-                        <span class="footer__small">Newlands Cricket Grounds, Gate 24 Entrance</span>
-                        <span class="footer__small">3rd Floor Snakepit Building</span>
-                        <span class="footer__small">Newlands</span>
-                        <span class="footer__small">7700</span>
-                        <span class="footer__small">South Africa</span>
+                        <span class="footer__small">146 Campground Rd</span>-->
+                        <span class="footer__small">Reinsurance Building, 46 Marina Road,</span>
+                        <span class="footer__small">Lagos Island</span>
                     </div>
                 </div>
 
@@ -89,7 +86,11 @@
 
 <script>
     export default {
-
+        methods: {
+            open_link(url) {
+                window.open(url, '_blank');
+            }
+        }
     }
 </script>
 

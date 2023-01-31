@@ -11,19 +11,19 @@
 
             <div class="header__menuarea header__area">
                 <div class="header__menuitem">
-                    <NuxtLink to="/howwethink">How we think</NuxtLink>
+                    <a href="#howwethink">How we think</a>
                 </div>
                 <div class="header__menuitem">
-                    <NuxtLink to="/competencies">Competencies</NuxtLink>
+                    <a href="#competencies">Competencies</a>
                 </div>
                 <div class="header__menuitem">
-                    <NuxtLink to="/howwethink">Who we are</NuxtLink>
+                    <a href="#whoweare">Who we are</a>
+                </div>
+                <div class="header__menuitem" @click="open_link('https://billboards.echoafrica.co/')">
+                    <div class="header__menuitem--item">Billboards</div>
                 </div>
                 <div class="header__menuitem">
-                    <NuxtLink to="/howwethink">Billboards</NuxtLink>
-                </div>
-                <div class="header__menuitem">
-                    <NuxtLink to="/howwethink">Say Hello</NuxtLink>
+                    <a href="#footer">Say Hello</a>
                 </div>
             </div>
 
@@ -33,7 +33,11 @@
 
 <script>
 export default {
-
+    methods: {
+        open_link(url) {
+            window.open(url, '_blank');
+        }
+    }
 }
 </script>
 
@@ -72,6 +76,15 @@ export default {
 
     &__menuitem {
         margin-left: #{scaleValue(35)};
+
+        &--item {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 1);
+            font-size: #{scaleValue(16)};
+            font-size: 600;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
 
         & a {
             text-decoration: none;

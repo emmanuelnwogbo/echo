@@ -5,7 +5,7 @@
                 <div></div>
                 <MobileRipplePhoto :imgitem="`dude.avif`"/>
             </div>
-            <div class="whowearemobile__copy">
+            <div class="whowearemobile__copy" id="whowearemobile__copy">
                 <h2 class="whowearemobile__copy--h2">Who We Are...</h2>
                 <div class="whowearemobile__copy--padleft">
                     <h3 class="whowearemobile__copy--h3">Passionate Optimists</h3>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="whoweare">
+        <div class="whoweare" id="whoweare">
             <div class="whoweare__left">
                 <h3 class="whoweare__h3">Who We Are...</h3>
                 <p class="whoweare__copy">Passionate Optimists</p>

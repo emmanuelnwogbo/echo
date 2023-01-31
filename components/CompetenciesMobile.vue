@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="competenciesmobile">
+        <div class="competenciesmobile" id="competenciesmobile">
             <MobileRipplePhoto :imgitem="`girl2.avif`"/>
             <div class="competenciesmobile__copy">
                 <h2 class="competenciesmobile__copy--h2">Competencies</h2>

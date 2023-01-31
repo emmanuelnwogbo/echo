@@ -25,10 +25,11 @@
                 <div class="dropdown__links">
                     <div class="dropdown__link" :class="{
                         current: true
-                    }"><NuxtLink to="/howwethink">How We Think</NuxtLink></div>
-                    <div class="dropdown__link"><NuxtLink to="/works">Works</NuxtLink></div>
-                    <div class="dropdown__link"><NuxtLink to="/booking">Book A board</NuxtLink></div>
-                    <div class="dropdown__link"><NuxtLink to="/contact">Contact</NuxtLink></div>
+                    }" @click="closedropdown"><a href="#howwethink">How We Think</a></div>
+                    <div class="dropdown__link" @click="closedropdown"><a href="#competenciesmobile">Competencies</a></div>
+                    <div class="dropdown__link" @click="closedropdown"><a href="#whowearemobile__copy">Who We Are</a></div>
+                    <div class="dropdown__link" @click="open_link('https://billboards.echoafrica.co/')"><div>Billboards</div></div>
+                    <div class="dropdown__link" @click="scrollToBottom"><div>Say Hello</div></div>
                 </div>
                 <div class="dropdown__contacts">
                     <div class="dropdown__contact">
@@ -63,7 +64,48 @@
 import dropdown from '@/mixins/dropdown.js';
 
 export default {
-    mixins: [dropdown]
+    mixins: [dropdown],
+    methods: {
+        open_link(url) {
+            window.open(url, '_blank');
+            this.closedropdown();
+        },
+        scrollToBottom() {
+            this.closedropdown();
+            window.scrollTo(0,document.body.scrollHeight);
+        },
+        closedropdown() {
+            const tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: .2  }});
+
+            tl.to('.dropdown__links', {
+                'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', 
+                opacity: 0, 
+                y: 'translateY(100px)', 
+                duration: .3
+            });
+
+            tl.to('.dropdown__contacts', {
+                'clip-path': 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)', 
+                opacity: '0', 
+                y: 'translateY(100px)',
+                duration: .3
+            });
+
+            tl.to('.dropdown__content', {
+                height: '0',
+                'padding': '0',
+                'marginTop': '0',
+                duration: .1
+            });
+
+            tl.to('.dropdown__background', {
+                height: '0',
+                duration: .8
+            });
+
+            this.dropdownOpen = false;
+        }
+    }
 }
 </script>
 
