@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="footer__socialitems">
-                        <figure class="footer__socialitems--svg" @click="open_link('https://ng.linkedin.com/showcase/billboards-by-echo-africa')">
+                        <figure class="footer__socialitems--svg" @click="open_link('https://www.linkedin.com/company/echoafrica/')">
                             <svg class="linkedin">
                                 <use xlink:href="@/assets/imgs/sprite.svg#icon-linkedin"/>
                             </svg>
