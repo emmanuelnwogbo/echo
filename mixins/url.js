@@ -1,7 +1,7 @@
 export default {
     data() {
         return {
-            url: `http://localhost:8080`
+            url: `https://echoworks.herokuapp.com`
         }
     },
     computed: {
