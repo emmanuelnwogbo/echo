@@ -45,7 +45,7 @@
 
             const geometry = new THREE.PlaneGeometry(6, 8, 15, 9);
             const material = new THREE.MeshBasicMaterial({
-                map: loader.load('dude.avif'),
+                map: loader.load('O-2.jpg'),
             });
 
             const mesh = new THREE.Mesh(geometry, material);

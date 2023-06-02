@@ -14,8 +14,8 @@
             var myAnimation = new hoverEffect({
                 parent: document.querySelector('.disp'),
                 intensity: 0.3,
-                image1: 'girl2.avif',
-                image2: 'girl.avif',
+                image1: 'oraimo_4.jpg',
+                image2: 'oraimo_9.jpg',
                 displacementImage: '4.png',
                 imagesRatio: 200/130
             });

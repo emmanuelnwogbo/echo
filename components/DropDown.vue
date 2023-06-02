@@ -28,6 +28,7 @@
                     }" @click="closedropdown"><a href="#howwethink">How We Think</a></div>
                     <div class="dropdown__link" @click="closedropdown"><a href="#competenciesmobile">Competencies</a></div>
                     <div class="dropdown__link" @click="closedropdown"><a href="#whowearemobile__copy">Who We Are</a></div>
+                    <div class="dropdown__link" @click="closedropdown('/ourworksmob')"><a>0ur works</a></div>
                     <div class="dropdown__link" @click="open_link('https://billboards.echoafrica.co/')"><div>Billboards</div></div>
                     <div class="dropdown__link" @click="scrollToBottom"><div>Say Hello</div></div>
                 </div>
@@ -74,7 +75,11 @@ export default {
             this.closedropdown();
             window.scrollTo(0,document.body.scrollHeight);
         },
-        closedropdown() {
+        closedropdown(route) {
+            if (route) {
+                this.$router.push(route)
+            }
+
             const tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: .2  }});
 
             tl.to('.dropdown__links', {

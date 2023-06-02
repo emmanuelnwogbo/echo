@@ -43,7 +43,7 @@ export default {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'
       },
       {
-        sec: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'
+        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'
       }
     ]
   },

@@ -19,6 +19,9 @@
                 <div class="header__menuitem">
                     <a href="#whoweare">Who we are</a>
                 </div>
+                <div class="header__menuitem">
+                    <a href="#whoweare">Our works</a>
+                </div>
                 <div class="header__menuitem" @click="open_link('https://billboards.echoafrica.co/')">
                     <div class="header__menuitem--item">Billboards</div>
                 </div>

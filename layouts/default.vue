@@ -35,7 +35,7 @@
 
       @media only screen and (max-width: 428px) {
         display: block;
-        z-index: 4;
+        z-index: 24;
         position: fixed;
         top: 0;
         left: 0;
