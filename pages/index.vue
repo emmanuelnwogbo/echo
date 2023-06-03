@@ -65,7 +65,7 @@ export default {
     methods: {
         updateCounter() {
             setInterval(() => {
-                if (this.counter <= 90) {
+                if (this.counter <= 70) {
                     let counter = this.counter;
                     counter+=10;
                     this.counter = counter;
@@ -74,20 +74,28 @@ export default {
 
                     loading_page_counter.innerHTML = '';
                     loading_page_counter.innerHTML = this.counter;
-
-
-                    if (this.counter === 100) {
-                        const loading_page = document.getElementById('page-loading');
-                        loading_page.style.transform = 'translateY(-140%)';
-                    }
                 }
             }, 860);
         }
     },
     mixins: [jumbotronMixin],
     mounted() {
-        window.addEventListener('load', function() {
-            this.updateCounter();
+        this.updateCounter();
+
+        window.addEventListener('load', () => {
+            if (this.counter <= 90) {
+                this.counter = 100;
+
+                const loading_page_counter = document.getElementById('page-loading-counter');
+
+                loading_page_counter.innerHTML = '';
+                loading_page_counter.innerHTML = this.counter;
+
+                if (this.counter === 100) {
+                    const loading_page = document.getElementById('page-loading');
+                    loading_page.style.transform = 'translateY(-140%)';
+                }
+            }
         })
 
         document.addEventListener('DOMContentLoaded', () => {
