@@ -14,7 +14,7 @@
             <div class="jumbotron__content">
                 <div class="jumbotron__copy">
                     <span class="jumbotron__copy--line">The young and vibrant creative</span>
-                    <span class="jumbotron__copy--line">collective, adopting</span>
+                    <span class="jumbotron__copy--line scroll-trigger-we-are-echo">collective, adopting</span>
                     <span class="jumbotron__copy--line">a culture forward</span>
                     <span class="jumbotron__copy--line">approach to brand building</span>
                 </div>
@@ -57,8 +57,61 @@
 import jumbotronMixin from '@/mixins/jumbotron.js';
 
 export default {
+    data() {
+        return {
+            counter: 0
+        }
+    },
+    methods: {
+        updateCounter() {
+            setInterval(() => {
+                if (this.counter <= 90) {
+                    let counter = this.counter;
+                    counter+=10;
+                    this.counter = counter;
+
+                    const loading_page_counter = document.getElementById('page-loading-counter');
+
+                    loading_page_counter.innerHTML = '';
+                    loading_page_counter.innerHTML = this.counter;
+
+
+                    if (this.counter === 100) {
+                        const loading_page = document.getElementById('page-loading');
+                        loading_page.style.transform = 'translateY(-140%)';
+                    }
+                }
+            }, 860);
+        }
+    },
     mixins: [jumbotronMixin],
     mounted() {
+        document.addEventListener('DOMContentLoaded', () => {
+
+            this.updateCounter();
+
+            const tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});
+
+            tl.to('.jumbotron__copy--line', {
+                stagger: .3,
+                'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', 
+                opacity: 1,  
+                duration: 1
+            });
+
+            gsap.to('.jumbotron__scolltext', {
+                x: '-530%',
+                ease: 'power4.inOut',
+                duration: 14,
+                scrollTrigger: {
+                    trigger: '.jumbotron__scolltext',
+                    start: '-=800', // Offset of 200 pixels from the original position
+                    end: '+=1000', //
+                    scrub: true
+                }
+            });  
+        })
+
         const container = document.querySelector(".jumbotron__background");
         const loader = new THREE.TextureLoader();
         const scene = new THREE.Scene();
@@ -66,7 +119,7 @@ export default {
         const renderer = new THREE.WebGL1Renderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
-        const geometry = new THREE.PlaneGeometry(15, 8, 15, 9);
+        const geometry = new THREE.PlaneGeometry(15, 10, 15, 9);
         const material = new THREE.MeshBasicMaterial({
             map: loader.load("spiralwhite.png"),
         });
@@ -80,10 +133,8 @@ export default {
             for (let i = 0; i < count; i++) {
                 const x = geometry.attributes.position.getX(i);
                 const y = geometry.attributes.position.getY(i);
-                const anim1 = 0.25 * Math.sin(x + time * 0.7);
-                const anim2 = 0.35 * Math.sin((x * 1) + time * 0.7);
-                const anim3 = 0.1 * Math.sin((y * 15) + time * 0.7);
-                geometry.attributes.position.setZ(i, anim1 + anim2);
+                const anim1 = 0.25 * Math.sin(x + time * 0.9);
+                geometry.attributes.position.setZ(i, anim1);
                 geometry.computeVertexNormals();
                 geometry.attributes.position.needsUpdate = true;
             }
@@ -131,6 +182,7 @@ export default {
     &__background {
         //position: fixed;
         height: #{scaleValue(1000)};
+        width: 100vw;
     }
 
     &__desktop {
@@ -192,7 +244,7 @@ export default {
         display: flex;
         //transform: translateX(#{scaleValue(200)});
         transition: all .3s ease;
-        margin-left: #{scaleValue(500)};
+        margin-left: #{scaleValue(1300)};
 
         &--area {
             position: relative;

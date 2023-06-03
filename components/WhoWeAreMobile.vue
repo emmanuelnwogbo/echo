@@ -3,7 +3,7 @@
         <div class="whowearemobile">
             <div class="whowearemobile__photoarea">
                 <div></div>
-                <MobileRipplePhoto :imgitem="`dude.avif`"/>
+                <MobileRipplePhoto :imgitem="`O-2.jpg`"/>
             </div>
             <div class="whowearemobile__copy" id="whowearemobile__copy">
                 <h2 class="whowearemobile__copy--h2">Who We Are...</h2>

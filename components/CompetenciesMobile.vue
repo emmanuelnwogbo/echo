@@ -1,16 +1,16 @@
 <template>
     <div>
         <div class="competenciesmobile" id="competenciesmobile">
-            <MobileRipplePhoto :imgitem="`girl2.avif`"/>
+            <MobileRipplePhoto :imgitem="`oraimo_4.jpg`"/>
             <div class="competenciesmobile__copy">
                 <h2 class="competenciesmobile__copy--h2">Competencies</h2>
                 <p class="competenciesmobile__copy--p">
                     We are a brand consulting firm offering full-service marketing communications services to brands looking to build strong desire for their products and services and expand beyond their current territories
                 </p>
-               <div class="competenciesmobile__viewmore">
+               <!--<div class="competenciesmobile__viewmore">
                     <span class="competenciesmobile__viewmore--btn">View Details</span>
                     <span class="competenciesmobile__viewmore--slash"></span>
-               </div>
+               </div>-->
             </div>
         </div>
     </div>

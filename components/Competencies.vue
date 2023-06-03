@@ -6,9 +6,9 @@
                 <div class="competencies__right">
                     <h3 class="competencies__h3">Competencies</h3>
                     <p class="competencies__copy">We are a brand consulting firm offering full-service marketing communications services to brands looking to build strong desire for their products and services and expand beyond their current territories</p>
-                    <div class="competencies__btn">
+                    <!--<div class="competencies__btn">
                         <NuxtLink to="/">View details</NuxtLink>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
