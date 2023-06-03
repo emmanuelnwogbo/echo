@@ -86,10 +86,11 @@ export default {
     },
     mixins: [jumbotronMixin],
     mounted() {
-        document.addEventListener('DOMContentLoaded', () => {
-
+        window.addEventListener('load', function() {
             this.updateCounter();
+        })
 
+        document.addEventListener('DOMContentLoaded', () => {
             const tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});
 
             tl.to('.jumbotron__copy--line', {
