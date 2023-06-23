@@ -147,9 +147,11 @@ export default {
         @media only screen and (max-width: 428px) {
             height: #{scaleValue(230)};
             transform: translateX(#{scaleValue(-100)});
+            display: flex;
+            align-items: center;
 
             & img {
-                height: #{scaleValue(230)};
+                height: #{scaleValue(170)};
                 width: auto
             }
         }

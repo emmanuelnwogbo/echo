@@ -62,7 +62,7 @@
                         <!--<span class="footer__small">The Culture Foundry Co</span>
                         <span class="footer__small">C/0 Workshop17</span>
                         <span class="footer__small">146 Campground Rd</span>-->
-                        <span class="footer__small">Reinsurance Building, 46 Marina Road,</span>
+                        <span class="footer__small">ECHO AFRICA a: 13 CHIEF ALBERT IYORAH STREET, LEKKI,</span>
                         <span class="footer__small">Lagos Island</span>
                     </div>
                 </div>

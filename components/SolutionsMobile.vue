@@ -35,7 +35,7 @@ export default {
 
         &--black {
             flex-shrink: 0;
-            margin-left: #{scaleValue(30)};
+            transform: translateX(#{scaleValue(-120)});
         }
 
         &--transparent {

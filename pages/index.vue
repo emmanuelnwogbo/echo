@@ -75,7 +75,7 @@ export default {
                     loading_page_counter.innerHTML = '';
                     loading_page_counter.innerHTML = this.counter;
                 }
-            }, 860);
+            }, 960);
         }
     },
     mixins: [jumbotronMixin],

@@ -50,7 +50,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: #{scaleValue(15)} #{scaleValue(100)};
 
     position: fixed;
@@ -58,7 +57,7 @@ export default {
     left: 0;
     width: 100vw;
     z-index: 3;
-
+    height: #{scaleValue(100)};
 
     &__area {
         display: flex;
@@ -66,7 +65,7 @@ export default {
     }
 
     &__logo {
-        height: #{scaleValue(65)};
+        height: #{scaleValue(60)};
         display: flex;
         align-items: center;
 

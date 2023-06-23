@@ -64,25 +64,25 @@ export default {
                     link: 'moneypigeon',
                     id: 0,
                     name: 'Money Pigeon',
-                    img: 'https://rebel-sam.s3.eu-west-2.amazonaws.com/websitelements/workspage/moneypigeon/Slideshow+of+Creatives/CRYPTO.jpg'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_36/v1687504409/CRYPTO_r6v7kc.jpg'
                 },
                 {
                     link: 'oraimo',
                     id: 1,
                     name: 'Oraimo open audio',
-                    img: 'https://rebel-sam.s3.eu-west-2.amazonaws.com/websitelements/workspage/ORAIMO+OPEN+AUDIO/SLIDER+CREATIVE/open-audio-newArtboard-2.png'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_41/v1687504357/open-audio-newArtboard-2_m3erin.png'
                 },
                 {
                     link: 'oraimowaye',
                     id: 2,
                     name: 'Oraimo Waye',
-                    img: 'https://rebel-sam.s3.eu-west-2.amazonaws.com/websitelements/workspage/ORAIMO+WAYE/CaseStudy+Images/O-11.jpg'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_30/v1687504445/O-11_u80wtb.jpg'
                 },
                 {
                     link: 'pernodricard',
                     id: 3,
                     name: 'Pernod Ricard',
-                    img: 'https://rebel-sam.s3.eu-west-2.amazonaws.com/websitelements/workspage/PERNOD+RICARD/CASE+STUDY/Screenshot+2023-02-02+at+03.34.22.png'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_39/v1687504482/Screenshot_2023-02-02_at_03.34.22_uszym3.png'
                 }
             ]
         }
