@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="competenciesmobile" id="competenciesmobile">
-            <MobileRipplePhoto :imgitem="`oraimo_4.jpg`"/>
+            <MobileRipplePhoto :imgitem="`oraimo_4.jpeg`"/>
             <div class="competenciesmobile__copy">
                 <h2 class="competenciesmobile__copy--h2">Competencies</h2>
                 <p class="competenciesmobile__copy--p">

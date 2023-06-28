@@ -55,6 +55,7 @@
 
 <script>
 import jumbotronMixin from '@/mixins/jumbotron.js';
+import { mapActions, mapState } from 'vuex';
 
 export default {
     data() {
@@ -63,6 +64,7 @@ export default {
         }
     },
     methods: {
+        ...mapActions('loaded', ['setHomePageLoaded']),
         updateCounter() {
             setInterval(() => {
                 if (this.counter <= 70) {
@@ -82,6 +84,11 @@ export default {
     mounted() {
         this.updateCounter();
 
+        if (this.home_page_loaded) {
+            const loading_page = document.getElementById('page-loading');
+            loading_page.style.transform = 'translateY(-140%)';
+        }
+
         window.addEventListener('load', () => {
             if (this.counter <= 90) {
                 this.counter = 100;
@@ -94,6 +101,8 @@ export default {
                 if (this.counter === 100) {
                     const loading_page = document.getElementById('page-loading');
                     loading_page.style.transform = 'translateY(-140%)';
+
+                    this.setHomePageLoaded();
                 }
             }
         })
@@ -151,6 +160,13 @@ export default {
             renderer.render(scene, camera);
         }
         animate();
+
+        this.setHomePageLoaded();
+    },
+    computed: {
+        ...mapState({
+            home_page_loaded: state => state.loaded.homePageLoaded,
+        }),
     }
 }
 </script>

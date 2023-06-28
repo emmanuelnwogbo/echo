@@ -1,5 +1,5 @@
 <template>
-    <div class="ourworks">
+    <div class="ourworks" id="ourworks">
         <div class="ourworks__content">
             <section class="ourworks__section" v-for="(item, index) in items"
             :class="{}"
@@ -18,6 +18,8 @@
 
 <script>
 import url from '@/mixins/url.js';
+import { mapActions, mapState } from 'vuex';
+
 export default {
     data() {
         return {
@@ -26,12 +28,19 @@ export default {
     },
     mixins: [url],
     methods: {
+        ...mapActions('loaded', ['setMobileWorksLoaded']),
         gotolink(link) {
             window.location.href = `${this.url}/${link}`;
         },
         isElementAtTop(element) {
             const rect = element.getBoundingClientRect();
             return rect.top <= 0;
+        },
+        handleVisibility() {
+            const ourworks = document.getElementById('ourworks');
+            ourworks.classList.add('visible');
+
+            this.setMobileWorksLoaded();
         },
         handleScroll() {
             const sections = document.querySelectorAll('.ourworks__section');
@@ -53,36 +62,47 @@ export default {
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
+        document.addEventListener('DOMContentLoaded', this.handleVisibility);
+
+        this.setMobileWorksLoaded();
+
+        if (this.mobile_works_loaded) {
+            const ourworks = document.getElementById('ourworks');
+            ourworks.classList.add('visible');
+        }
     },
     beforeUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     },
     computed: {
+        ...mapState({
+            mobile_works_loaded: state => state.loaded.mobileWorksLoaded,
+        }),
         items: function() {
             return [
                 {
                     link: 'moneypigeon',
                     id: 0,
                     name: 'Money Pigeon',
-                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_36/v1687504409/CRYPTO_r6v7kc.jpg'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_10/v1687504409/CRYPTO_r6v7kc.jpg'
                 },
                 {
                     link: 'oraimo',
                     id: 1,
                     name: 'Oraimo open audio',
-                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_41/v1687504357/open-audio-newArtboard-2_m3erin.png'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_10/v1687504357/open-audio-newArtboard-2_m3erin.png'
                 },
                 {
                     link: 'oraimowaye',
                     id: 2,
                     name: 'Oraimo Waye',
-                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_30/v1687504445/O-11_u80wtb.jpg'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_10/v1687504445/O-11_u80wtb.jpg'
                 },
                 {
                     link: 'pernodricard',
                     id: 3,
                     name: 'Pernod Ricard',
-                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_39/v1687504482/Screenshot_2023-02-02_at_03.34.22_uszym3.png'
+                    img: 'https://res.cloudinary.com/dqmgqhman/image/upload/q_10/v1687504482/Screenshot_2023-02-02_at_03.34.22_uszym3.png'
                 }
             ]
         }
@@ -94,6 +114,12 @@ export default {
 .ourworks {
     background: $footerblack;
     min-height: 100vh;
+
+    visibility: hidden;
+
+    &.visible {
+        visibility: visible;
+    }
 
     &__title {
         position: absolute;
