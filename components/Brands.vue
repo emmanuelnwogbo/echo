@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="brands">
+      <div class="brands" v-if="!isLoading">
         <div class="brands__conveyor">
             <img src="@/assets/imgs/fanthingy.jpeg"/>
             <img src="@/assets/imgs/oraimo-logo.png"/>
@@ -32,8 +32,15 @@
   </template>
   
   <script>
+  import utilityMixin from '@/mixins/utility.js';
+
   export default {
-    
+    mixins: [utilityMixin],
+    mounted() {
+      this.isLoading = false;
+      this.visible = true;
+      this.setHomePageLoaded(this.visible);
+    }
   }
   </script>
 

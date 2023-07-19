@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="competencies" id="competencies">
+        <div class="competencies" id="competencies" v-if="!isLoading">
             <div class="competencies__top">
                 <HoverCompImg />
                 <div class="competencies__right">
@@ -16,8 +16,20 @@
 </template>
 
 <script>
-    export default { 
+    import utilityMixin from '@/mixins/utility.js';
 
+    export default { 
+        mixins: [utilityMixin],
+        data() {
+            return {
+                isLoading: true,
+            }
+        },
+        mounted() {
+            this.isLoading = false;
+            this.visible = true;
+            this.setHomePageLoaded(this.visible);
+        }
      }
 </script>
 

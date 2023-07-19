@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="whoweare" id="whoweare">
+        <div class="whoweare" id="whoweare" v-if="!isLoading">
             <div class="whoweare__left">
                 <h3 class="whoweare__h3">Who We Are...</h3>
                 <p class="whoweare__copy">Passionate Optimists</p>
@@ -30,51 +30,63 @@
 </template>
 
 <script>
+    import utilityMixin from '@/mixins/utility.js';
+
     export default {
+        mixins: [utilityMixin],
         mounted() {
-            const container = document.querySelector('.whoweare__photo');
-            const loader = new THREE.TextureLoader();
+            this.isLoading = false;
 
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(70, 500 / 700, 0.1, 1000);
+            setTimeout(() => {
+                const container = document.querySelector('.whoweare__photo');
+                const loader = new THREE.TextureLoader();
 
-            const renderer = new THREE.WebGL1Renderer();
-            renderer.setSize(500, 750);
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(70, 500 / 700, 0.1, 1000);
 
-            container.appendChild(renderer.domElement);
+                const renderer = new THREE.WebGL1Renderer();
+                renderer.setSize(500, 750);
 
-            const geometry = new THREE.PlaneGeometry(6, 8, 15, 9);
-            const material = new THREE.MeshBasicMaterial({
-                map: loader.load('O-2.jpg'),
-            });
+                container.appendChild(renderer.domElement);
 
-            const mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
-            camera.position.z = 5;
+                const geometry = new THREE.PlaneGeometry(6, 8, 15, 9);
+                const material = new THREE.MeshBasicMaterial({
+                    map: loader.load('O-2.jpg'),
+                });
 
-            const count = geometry.attributes.position.count;
-            const clock = new THREE.Clock();
+                const mesh = new THREE.Mesh(geometry, material);
+                scene.add(mesh);
+                camera.position.z = 5;
 
-            function animate() {
-                const time = clock.getElapsedTime();
+                const count = geometry.attributes.position.count;
+                const clock = new THREE.Clock();
+
+                function animate() {
+                    const time = clock.getElapsedTime();
   
-                for (let i = 0; i < count; i++) {
-                    const x = geometry.attributes.position.getX(i);
-                    const y = geometry.attributes.position.getY(i);
+                    for (let i = 0; i < count; i++) {
+                        const x = geometry.attributes.position.getX(i);
+                        const y = geometry.attributes.position.getY(i);
     
-                    const anim1 = 0.25 * Math.sin(x + time * 0.7);
-                    const anim2 = 0.35 * Math.sin((x * 1) + time * 0.7);
-                    const anim3 = 0.1 * Math.sin((y * 15) + time * 0.7);
+                        const anim1 = 0.25 * Math.sin(x + time * 0.7);
+                        const anim2 = 0.35 * Math.sin((x * 1) + time * 0.7);
+                        const anim3 = 0.1 * Math.sin((y * 15) + time * 0.7);
     
-                    geometry.attributes.position.setZ(i, anim1 + anim2 + anim3);
-                    geometry.computeVertexNormals();
-                    geometry.attributes.position.needsUpdate = true;
+                        geometry.attributes.position.setZ(i, anim1 + anim2 + anim3);
+                        geometry.computeVertexNormals();
+                        geometry.attributes.position.needsUpdate = true;
+                    }
+  
+                    requestAnimationFrame(animate);
+                    renderer.render(scene, camera);
                 }
-  
-                requestAnimationFrame(animate);
-                renderer.render(scene, camera);
-            }
-            animate();
+                animate();
+
+                setTimeout(() => {
+                    this.visible = true;
+                    this.setHomePageLoaded(this.visible);
+                }, 1000);
+            }, 1000)
         }
     }
 </script>

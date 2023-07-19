@@ -1,6 +1,6 @@
 <template>
     <div>
-        <footer class="footer" id="footer">
+        <footer class="footer" id="footer" v-if="!isLoading">
             <div class="footer__left">
                 <figure class="footer__logo">
                     <img src="@/assets/imgs/logo.svg"/>
@@ -19,7 +19,7 @@
                 </p>
 
                 <span class="footer__email">
-                    info@echoafrica.co
+                    hello@echoafrica.co
                 </span>
 
                 <!--<span class="footer__bbe">
@@ -84,7 +84,15 @@
 </template>
 
 <script>
+    import utilityMixin from '@/mixins/utility.js';
+
     export default {
+        mixins: [utilityMixin],
+        mounted() {
+            this.isLoading = false;
+            this.visible = true;
+            this.setHomePageLoaded(this.visible);
+        },
         methods: {
             open_link(url) {
                 window.open(url, '_blank');

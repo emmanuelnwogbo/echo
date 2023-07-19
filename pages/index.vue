@@ -1,17 +1,20 @@
 <template>
     <div class="jumbotron">
-        <div class="jumbotron__loading" id="page-loading">
+
+        <div class="jumbotron__loading" id="page-loading" :class="{ loaded: homePageLoaded.length >= 7 }">
             <figure>
                 <img src="@/assets/imgs/logo.svg"/>
             </figure>
-
-            <p id="page-loading-counter"></p>
+            
+            <p id="page-loading-counter" v-if="!homePageLoaded.length">0</p>
+            <p id="page-loading-counter" v-if="homePageLoaded.length">{{ homePageLoaded.length <= 6 ? `${homePageLoaded.length}0` : 100 }}</p>
         </div>
-        <div class="jumbotron__desktop">
-            <div class="jumbotron__background">
+
+        <div class="jumbotron__desktop" v-if="!isLoading">
+            <div class="jumbotron__background" :class="{ visible }">
 
             </div>
-            <div class="jumbotron__content">
+            <div class="jumbotron__content" :class="{ visible }">
                 <div class="jumbotron__copy">
                     <span class="jumbotron__copy--line">The young and vibrant creative</span>
                     <span class="jumbotron__copy--line scroll-trigger-we-are-echo">collective, adopting</span>
@@ -55,118 +58,73 @@
 
 <script>
 import jumbotronMixin from '@/mixins/jumbotron.js';
-import { mapActions, mapState } from 'vuex';
+import utilityMixin from '@/mixins/utility.js';
 
 export default {
-    data() {
-        return {
-            counter: 0
-        }
-    },
-    methods: {
-        ...mapActions('loaded', ['setHomePageLoaded']),
-        updateCounter() {
-            setInterval(() => {
-                if (this.counter <= 70) {
-                    let counter = this.counter;
-                    counter+=10;
-                    this.counter = counter;
-
-                    const loading_page_counter = document.getElementById('page-loading-counter');
-
-                    loading_page_counter.innerHTML = '';
-                    loading_page_counter.innerHTML = this.counter;
-                }
-            }, 960);
-        }
-    },
-    mixins: [jumbotronMixin],
+    mixins: [jumbotronMixin, utilityMixin],
     mounted() {
-        this.updateCounter();
+        this.isLoading = false;
 
-        if (this.home_page_loaded) {
-            const loading_page = document.getElementById('page-loading');
-            loading_page.style.transform = 'translateY(-140%)';
-        }
+        setTimeout(() => {
+            document.addEventListener('DOMContentLoaded', () => {
+                const tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});
 
-        window.addEventListener('load', () => {
-            if (this.counter <= 90) {
-                this.counter = 100;
+                tl.to('.jumbotron__copy--line', {
+                    stagger: .3,
+                    'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', 
+                    opacity: 1,  
+                    duration: 1
+                });
 
-                const loading_page_counter = document.getElementById('page-loading-counter');
+                gsap.to('.jumbotron__scolltext', {
+                    x: '-530%',
+                    ease: 'power4.inOut',
+                    duration: 14,
+                    scrollTrigger: {
+                        trigger: '.jumbotron__scolltext',
+                        start: '-=800', // Offset of 200 pixels from the original position
+                        end: '+=1000', //
+                        scrub: true
+                    }
+                });  
+            })
 
-                loading_page_counter.innerHTML = '';
-                loading_page_counter.innerHTML = this.counter;
-
-                if (this.counter === 100) {
-                    const loading_page = document.getElementById('page-loading');
-                    loading_page.style.transform = 'translateY(-140%)';
-
-                    this.setHomePageLoaded();
-                }
-            }
-        })
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2  }});
-
-            tl.to('.jumbotron__copy--line', {
-                stagger: .3,
-                'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', 
-                opacity: 1,  
-                duration: 1
+            const container = document.querySelector(".jumbotron__background");
+            const loader = new THREE.TextureLoader();
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGL1Renderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            const geometry = new THREE.PlaneGeometry(15, 10, 15, 9);
+            const material = new THREE.MeshBasicMaterial({
+                map: loader.load("spiralwhite.png"),
             });
-
-            gsap.to('.jumbotron__scolltext', {
-                x: '-530%',
-                ease: 'power4.inOut',
-                duration: 14,
-                scrollTrigger: {
-                    trigger: '.jumbotron__scolltext',
-                    start: '-=800', // Offset of 200 pixels from the original position
-                    end: '+=1000', //
-                    scrub: true
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+            camera.position.z = 5;
+            const count = geometry.attributes.position.count;
+            const clock = new THREE.Clock();
+            function animate() {
+                const time = clock.getElapsedTime();
+                for (let i = 0; i < count; i++) {
+                    const x = geometry.attributes.position.getX(i);
+                    const y = geometry.attributes.position.getY(i);
+                    const anim1 = 0.25 * Math.sin(x + time * 0.9);
+                    geometry.attributes.position.setZ(i, anim1);
+                    geometry.computeVertexNormals();
+                    geometry.attributes.position.needsUpdate = true;
                 }
-            });  
-        })
-
-        const container = document.querySelector(".jumbotron__background");
-        const loader = new THREE.TextureLoader();
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGL1Renderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-        const geometry = new THREE.PlaneGeometry(15, 10, 15, 9);
-        const material = new THREE.MeshBasicMaterial({
-            map: loader.load("spiralwhite.png"),
-        });
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-        camera.position.z = 5;
-        const count = geometry.attributes.position.count;
-        const clock = new THREE.Clock();
-        function animate() {
-            const time = clock.getElapsedTime();
-            for (let i = 0; i < count; i++) {
-                const x = geometry.attributes.position.getX(i);
-                const y = geometry.attributes.position.getY(i);
-                const anim1 = 0.25 * Math.sin(x + time * 0.9);
-                geometry.attributes.position.setZ(i, anim1);
-                geometry.computeVertexNormals();
-                geometry.attributes.position.needsUpdate = true;
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
             }
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        this.setHomePageLoaded();
-    },
-    computed: {
-        ...mapState({
-            home_page_loaded: state => state.loaded.homePageLoaded,
-        }),
+            animate();
+            
+            setTimeout(() => {
+                this.visible = true;
+                this.setHomePageLoaded(this.visible);
+            }, 7000);
+        }, 1000);
     }
 }
 </script>
@@ -190,6 +148,10 @@ export default {
 
         transition: all 1s ease;
 
+        &.loaded {
+            transform: translateY(-100%);
+        }
+
         & figure {
 
             & img {
@@ -205,9 +167,14 @@ export default {
     }
     
     &__background {
-        //position: fixed;
+        opacity: 0;
         height: #{scaleValue(1000)};
         width: 100vw;
+        transition: all .5s ease;
+
+        &.visible {
+            opacity: 1;
+        }
     }
 
     &__desktop {
@@ -227,6 +194,12 @@ export default {
         padding: #{scaleValue(160)};
         padding-top: #{scaleValue(380)};
         z-index: 1;
+        transition: all .5s ease;
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+        }
     }
 
     &__copy {

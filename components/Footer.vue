@@ -16,7 +16,7 @@
                 <span>Feel free to reach out if you want to collaborate</span>
                 <span>with us, or simply have a chat.</span>
             </div>
-            <span class="footer__email">info@EchoAfrica.com</span>
+            <span class="footer__email">hello@echoafrica.co</span>
         </div>
       </div>
     </div>
